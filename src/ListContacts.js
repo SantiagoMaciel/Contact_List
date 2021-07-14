@@ -22,7 +22,7 @@ function ListContacts({ contacts, removeContactOnClick }) {
 
   return (
     <div className="list-contacts">
-      <div className="search-contacts">
+      <div className="inputContainer">
         <input
           className="search-contacts"
           type="text"
@@ -43,7 +43,6 @@ function ListContacts({ contacts, removeContactOnClick }) {
             {showingContacts.length} contacts of {contacts.length}
             <button
               onClick={() => {
-                showingContacts = contacts;
                 setQuery("");
               }}
             >
@@ -79,8 +78,9 @@ function ListContacts({ contacts, removeContactOnClick }) {
   );
 }
 
-ListContacts.protoTypes = {
+ListContacts.propTypes = {
   contacts: PropTypes.array.isRequired,
   removeContactOnClick: PropTypes.func.isRequired,
 };
+
 export default ListContacts;
